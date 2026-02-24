@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # ==========================================================
-# 👑 ZERO SENTINEL V6.5 - THE ABSOLUTE MASTER
+# 👑 ZERO SENTINEL V6.6 - THE CONSCIOUS MASTER
 # ==========================================================
 # Author: Gemini for Kamal (The Supreme Commander)
-# Version: 6.5 | Status: SUPREME OPERATIONAL
+# Version: 6.6 | Status: SUPREME OPERATIONAL
+# Fix: Automatic Environment Detection on Direct Commands
 # Features: Oracle DNS, Live HUD, Smart Spy, Integrity Scan, 
 #           Auto-Deploy, Self-Evolution, & Identity Switcher.
 # ==========================================================
@@ -22,7 +23,7 @@ R='\033[0;31m' G='\033[0;32m' Y='\033[1;33m' B='\033[0;34m'
 P='\033[0;35m' C='\033[0;36m' W='\033[1;37m' NC='\033[0m'
 BOLD='\033[1m'
 
-# --- DETEKSI LINGKUNGAN ---
+# --- DETEKSI LINGKUNGAN (PENTING: Diperbaiki agar global) ---
 function detect_env() {
     if [[ -d "/var/www/html" ]] || command -v nginx &> /dev/null; then
         ENV_MODE="SERVER"
@@ -33,6 +34,9 @@ function detect_env() {
     fi
 }
 
+# Jalankan deteksi segera saat script dijalankan
+detect_env
+
 function animate_pulse() {
     local message=$1
     echo -ne "${W}${message}${NC} "
@@ -42,13 +46,12 @@ function animate_pulse() {
 
 function startup_sequence() {
     clear
-    detect_env
-    echo -e "${P}${BOLD}Initializing Sentinel Absolute Link v6.5...${NC}"
+    echo -e "${P}${BOLD}Initializing Sentinel Absolute Link v6.6...${NC}"
     sleep 0.2
     echo -ne "${B}▓▓▒▒░░ Network: ${G}SECURED${NC}"
     echo -e " | Mode: $ENV_LABEL"
-    animate_pulse "▓▓▓▓▓▓▒▒░░ Loading Intelligence Core"
-    animate_pulse "▓▓▓▓▓▓▓▓▓▓▒▒░░ Syncing Sovereign Matrix"
+    animate_pulse "▓▓▓▓▓▓▒▒░░ Synchronizing Intelligence Core"
+    animate_pulse "▓▓▓▓▓▓▓▓▓▓▒▒░░ Calibrating Sovereign Matrix"
     echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - ALL SYSTEMS GO${NC}"
     sleep 0.2
 }
@@ -61,7 +64,7 @@ function show_ascii() {
     echo "   ███╔╝  ██╔══╝  ██╔══██╗██║   ██║    ╚════██║██╔══╝  ██║╚██╗██║   ██║   ██║██║╚██╗██║██╔══╝  ██║     "
     echo "  ███████╗███████╗██║  ██║╚██████╔╝    ███████║███████╗██║ ╚████║   ██║   ██║██║ ╚████║███████╗███████╗"
     echo "  ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝     ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝"
-    echo -e "                                 ${W}[ THE ABSOLUTE MASTER V6.5 ]${NC}"
+    echo -e "                                 ${W}[ THE CONSCIOUS MASTER V6.6 ]${NC}"
 }
 
 # --- MENU UTAMA ---
@@ -88,7 +91,7 @@ function show_help() {
     echo -e "├──────────────────────────────────────────────────────────────────────────┤"
     echo -e "│  ${Y}zsetup${NC}          ${W}» Core Calibration: Re-install All Master Aliases${NC}     ${P}│${NC}"
     echo -e "╰──────────────────────────────────────────────────────────────────────────╯"
-    echo -e "   ${BOLD}${C}LOG:${NC} Master Script Ready. | ${W}Type 'z' to see this menu.${NC}"
+    echo -e "   ${BOLD}${C}LOG:${NC} Intelligence Ready. | ${W}Type 'z' to see this menu.${NC}"
 }
 
 # --- FITUR: DNS ORACLE (zdns) ---
@@ -116,11 +119,19 @@ function dns_checker() {
 
 # --- FITUR: ADVICE SPY (zs) ---
 function spy_mode() {
-    if [ "$ENV_MODE" != "SERVER" ]; then echo -e "${R}❌ Server Mode Only.${NC}"; return; fi
+    if [ "$ENV_MODE" != "SERVER" ]; then 
+        echo -e "${R}❌ Server Mode Only.${NC}"
+        echo -e "${Y}Info: Kamu berada di $ENV_LABEL. Perintah ini butuh VPS lingkungan asli.${NC}"
+        return
+    fi
     clear; show_ascii
     LOG_SCAN=$(pm2 logs zero-api --lines 5 --no-colors --raw 2>&1)
     echo -e "${Y}💡 LOG ANALYSIS:${NC}"
-    if [[ "$LOG_SCAN" == *"Error"* ]]; then echo -e " » ${R}Backend lu Error Mal!${NC} Ketik: ${G}pm2 restart zero-api${NC}"; else echo -e " » ${G}Backend Sehat.${NC}"; fi
+    if [[ "$LOG_SCAN" == *"Error"* ]] || [[ "$LOG_SCAN" == *"error"* ]]; then 
+        echo -e " » ${R}Backend lu Error Mal!${NC} Ketik: ${G}pm2 restart zero-api${NC}"
+    else 
+        echo -e " » ${G}Backend Sehat Walafiat.${NC}"
+    fi
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
     pm2 logs zero-api --lines 20
 }
@@ -144,7 +155,7 @@ function ultimate_checker() {
 
 # --- FITUR: DEPLOY (zd) ---
 function ultimate_deploy() {
-    clear; show_ascii; detect_env
+    clear; show_ascii
     echo -e "${Y}🚀 INITIATING MASTER DEPLOYMENT...${NC}"
     git pull origin main --quiet
     if [ -d "$FRONTEND_DIR" ]; then
@@ -167,15 +178,15 @@ function ultimate_deploy() {
 # --- OTHER CORE CMDS ---
 function self_sync() {
     clear; show_ascii; git add .
-    MSG="evolve: zero sentinel master v6.5 [$(date +'%H:%M')]"
+    MSG="evolve: zero sentinel master v6.6 [$(date +'%H:%M')]"
     git commit -m "$MSG" --quiet && git push origin main && echo -e "${G}✅ Cloud Synced.${NC}"
 }
 
 function setup_native_commands() {
-    echo -e "\n${C}📡 Calibrating Master Aliases V6.5...${NC}"
+    echo -e "\n${C}📡 Calibrating Master Aliases V6.6...${NC}"
     sed -i "/# ZEROCHECKER ALIASES/,/alias z=/d" ~/.bashrc &> /dev/null
     {
-        echo "# ZEROCHECKER ALIASES V6.5"
+        echo "# ZEROCHECKER ALIASES V6.6"
         echo "alias zsync='$SCRIPT_PATH zsync'"
         echo "alias zconfig='$SCRIPT_PATH zconfig'"
         echo "alias zdns='$SCRIPT_PATH zdns'"
@@ -188,7 +199,7 @@ function setup_native_commands() {
         echo "alias zsetup='$SCRIPT_PATH zsetup'"
         echo "alias z='$SCRIPT_PATH'"
     } >> ~/.bashrc
-    echo -e "${G}✅ MASTER CORE LOADED!${NC}\n${Y}👉 RUN: source ~/.bashrc${NC}"
+    echo -e "${G}✅ MASTER CORE V6.6 LOADED!${NC}\n${Y}👉 RUN: source ~/.bashrc${NC}"
 }
 
 # --- ROUTING ---
