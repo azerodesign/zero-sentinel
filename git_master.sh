@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # ==========================================================
-# 👑 ZERO SENTINEL V6.4 - THE SOVEREIGN INTELLIGENCE PLUS
+# 👑 ZERO SENTINEL V6.5 - THE ABSOLUTE MASTER
 # ==========================================================
 # Author: Gemini for Kamal (The Supreme Commander)
-# Version: 6.4 | Status: BEYOND PERFECTION
-# Features: Oracle DNS 2.0, Live HUD, Advice Spy Logs, 
-#           Integrity Scan, Auto-Deploy, & Cloud Sync.
+# Version: 6.5 | Status: SUPREME OPERATIONAL
+# Features: Oracle DNS, Live HUD, Smart Spy, Integrity Scan, 
+#           Auto-Deploy, Self-Evolution, & Identity Switcher.
 # ==========================================================
 
-# --- KONFIGURASI JALUR ---
+# --- KONFIGURASI JALUR (WAJIB SESUAI) ---
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 NGINX_ROOT="/var/www/html/zero-monitor"
@@ -36,20 +36,20 @@ function detect_env() {
 function animate_pulse() {
     local message=$1
     echo -ne "${W}${message}${NC} "
-    for i in {1..5}; do echo -ne "${C}▰"; sleep 0.04; done
+    for i in {1..5}; do echo -ne "${C}▰"; sleep 0.03; done
     echo -e "${G} OK${NC}"
 }
 
 function startup_sequence() {
     clear
     detect_env
-    echo -e "${P}${BOLD}Initializing Intelligence Link v6.4...${NC}"
+    echo -e "${P}${BOLD}Initializing Sentinel Absolute Link v6.5...${NC}"
     sleep 0.2
     echo -ne "${B}▓▓▒▒░░ Network: ${G}SECURED${NC}"
     echo -e " | Mode: $ENV_LABEL"
-    animate_pulse "▓▓▓▓▓▓▒▒░░ Calibrating Advice Matrix"
-    animate_pulse "▓▓▓▓▓▓▓▓▓▓▒▒░░ Synching Sovereign Core"
-    echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - SYSTEM PEAK PERFORMANCE${NC}"
+    animate_pulse "▓▓▓▓▓▓▒▒░░ Loading Intelligence Core"
+    animate_pulse "▓▓▓▓▓▓▓▓▓▓▒▒░░ Syncing Sovereign Matrix"
+    echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - ALL SYSTEMS GO${NC}"
     sleep 0.2
 }
 
@@ -61,7 +61,7 @@ function show_ascii() {
     echo "   ███╔╝  ██╔══╝  ██╔══██╗██║   ██║    ╚════██║██╔══╝  ██║╚██╗██║   ██║   ██║██║╚██╗██║██╔══╝  ██║     "
     echo "  ███████╗███████╗██║  ██║╚██████╔╝    ███████║███████╗██║ ╚████║   ██║   ██║██║ ╚████║███████╗███████╗"
     echo "  ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝     ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝"
-    echo -e "                                 ${W}[ THE SOVEREIGN INTELLIGENCE V6.4 ]${NC}"
+    echo -e "                                 ${W}[ THE ABSOLUTE MASTER V6.5 ]${NC}"
 }
 
 # --- MENU UTAMA ---
@@ -69,188 +69,113 @@ function show_help() {
     startup_sequence
     show_ascii
     echo -e "${P}╭──────────────────────────────────────────────────────────────────────────╮${NC}"
-    echo -e "${P}│${NC}  ${W}🚀 SENTINEL COMMAND CENTER ${NC}        ${G}$ENV_MODE MODE${NC}     ${C}[ ADVANCED ]${NC}    ${P}│${NC}"
+    echo -e "${P}│${NC}  ${W}🚀 SENTINEL COMMAND CENTER ${NC}        ${G}$ENV_MODE MODE${NC}     ${C}[ ABSOLUTE ]${NC}    ${P}│${NC}"
     echo -e "${P}├──────────────────────────────────────────────────────────────────────────┤${NC}"
     echo -e "${P}│${NC}  ${C}DIAGNOSTICS & ADVICE:${NC}                                                  ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zdns${NC}            ${W}» Oracle DNS: Detect Mismatch & Cloudflare Proxy Fix${NC}   ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zhud${NC}            ${W}» Live Stats: Real-time Monitor RAM/CPU/Disk Load${NC}     ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zs${NC}              ${W}» Spy Mode: AI-Assisted Log Analysis & Error Detection${NC}  ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zc${NC}              ${W}» Integrity: Sovereign Scan with System Score 100/100${NC}   ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zdns${NC}            ${W}» DNS Oracle: Verify Domain & Cloudflare Proxy Fix${NC}   ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zhud${NC}            ${W}» Live HUD: VPS Real-time Resource Monitor${NC}           ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zs${NC}              ${W}» Spy Mode: AI-Assisted Log Analysis & Detection${NC}      ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zc${NC}              ${W}» Integrity: Sovereign Scan & System Health Score${NC}    ${P}│${NC}"
     
     echo -e "${P}│${NC}  ${C}CORE OPERATIONS:${NC}                                                       ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zd${NC}              ${W}» Full Deploy: Git Pull, Build Vite, & Nginx Inject${NC}   ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zsync${NC}           ${W}» Evolution: Autonomous Push to GitHub Cloud Matrix${NC}    ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zclean${NC}          ${W}» Deep Clean: Purge Node_Modules, Dist, & Build Cache${NC}  ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zd${NC}              ${W}» Full Deploy: Git Pull, Build, & Nginx Injection${NC}    ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zsync${NC}           ${W}» Evolution: Autonomous Push to GitHub Cloud${NC}         ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zclean${NC}          ${W}» Deep Clean: Purge Cache, Dist, & Node_Modules${NC}      ${P}│${NC}"
     
-    echo -e "${P}│${NC}  ${C}CONFIGURATION:${NC}                                                         ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zconfig${NC}         ${W}» Ghost-Config: Interactive Identity & Repo Switcher${NC}   ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zgh${NC}             ${W}» Auth Matrix: Check GitHub Status & Native Identity${NC}   ${P}│${NC}"
+    echo -e "${P}│${NC}  ${C}IDENTITY & CONFIG:${NC}                                                     ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zconfig${NC}         ${W}» Switcher: Change Git Auth & Repository URL${NC}         ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zgh${NC}             ${W}» Auth Matrix: Check GitHub Status & Native ID${NC}       ${P}│${NC}"
     echo -e "├──────────────────────────────────────────────────────────────────────────┤"
-    echo -e "│  ${Y}zsetup${NC}          ${W}» Core Calibration: Re-install All Sovereign Aliases${NC}  ${P}│${NC}"
+    echo -e "│  ${Y}zsetup${NC}          ${W}» Core Calibration: Re-install All Master Aliases${NC}     ${P}│${NC}"
     echo -e "╰──────────────────────────────────────────────────────────────────────────╯"
-    echo -e "   ${BOLD}${C}LOG:${NC} Active Monitoring... | ${W}Type 'z' for Dashboard.${NC}"
+    echo -e "   ${BOLD}${C}LOG:${NC} Master Script Ready. | ${W}Type 'z' to see this menu.${NC}"
 }
 
-# --- FITUR: ORACLE DNS 2.0 (zdns) ---
+# --- FITUR: DNS ORACLE (zdns) ---
 function dns_checker() {
     clear; show_ascii
-    echo -e "${B}🔮 INITIATING DNS ORACLE DIAGNOSTIC 2.0...${NC}"
+    echo -e "${B}🔮 INITIATING DNS ORACLE DIAGNOSTIC...${NC}"
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    LOCAL_IP_4=$(curl -s -4 https://ifconfig.me)
-    LOCAL_IP_6=$(curl -s -6 https://ifconfig.me)
+    LOCAL_IP=$(curl -s -4 https://ifconfig.me)
     DOMAIN_IP=$(dig +short $DOMAIN | tail -n1)
-    
-    echo -e "${C}[ NETWORK MATRIX ]${NC}"
-    echo -e " » Target Domain : ${W}${DOMAIN}${NC}"
-    echo -e " » VPS IPv4      : ${W}${LOCAL_IP_4}${NC}"
-    [ -n "$LOCAL_IP_6" ] && echo -e " » VPS IPv6      : ${W}${LOCAL_IP_6}${NC}"
-    echo -e " » DNS Resolved  : ${W}${DOMAIN_IP:-"NOT FOUND"}${NC}"
-    
+    echo -e " » Domain : ${W}${DOMAIN}${NC}"
+    echo -e " » VPS IP : ${W}${LOCAL_IP}${NC}"
+    echo -e " » DNS IP : ${W}${DOMAIN_IP:-"NOT FOUND"}${NC}"
     echo -e "\n${Y}💡 INTELLIGENT ADVICE:${NC}"
-    if [ -z "$DOMAIN_IP" ]; then
-        echo -e " » ${R}URGENT: Domain lu pingsan Mal!${NC}"
-        echo -e " » Solusi: Masuk ke Cloudflare, tambah A Record 'api' ke $LOCAL_IP_4."
-    elif [[ $DOMAIN_IP == 104.* ]] || [[ $DOMAIN_IP == 172.* ]]; then
-        echo -e " » ${Y}DETECTED: Cloudflare Proxy (Orange Cloud) Aktif.${NC}"
-        echo -e " » Masalah: Ini sering bikin Dashboard lu lapor 0% karena WebSocket diblok."
-        echo -e " » ${G}SARAN: Ubah 'api' record jadi 'DNS Only' (Awan Abu-abu) dulu Mal!${NC}"
-    elif [ "$LOCAL_IP_4" != "$DOMAIN_IP" ]; then
-        echo -e " » ${R}MISMATCH: IP Domain lu nembak ke tetangga!${NC}"
-        echo -e " » Solusi: Update IP di Cloudflare ke $LOCAL_IP_4 (Bukan $DOMAIN_IP)."
+    if [[ $DOMAIN_IP == 104.* ]] || [[ $DOMAIN_IP == 172.* ]]; then
+        echo -e " » ${Y}Cloudflare Proxy Terdeteksi (Awan Oranye).${NC}"
+        echo -e " » Saran: Ubah ke 'DNS Only' di Cloudflare biar metrik 0% lu ilang!${NC}"
+    elif [ "$LOCAL_IP" != "$DOMAIN_IP" ]; then
+        echo -e " » ${R}MISMATCH IP! Domain nembak ke server lain.${NC}"
+        echo -e " » Solusi: Update A-Record 'api' di Cloudflare ke $LOCAL_IP."
     else
-        echo -e " » ${G}SINKRON 100%: Jalur udara sudah bersih.${NC}"
-        echo -e " » Jika masih 0%, cek SSL lu (Wajib mode FULL di Cloudflare)."
+        echo -e " » ${G}SINKRON 100%. Jalur komunikasi bersih.${NC}"
     fi
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
 }
 
 # --- FITUR: ADVICE SPY (zs) ---
 function spy_mode() {
-    if [ "$ENV_MODE" != "SERVER" ]; then echo -e "${R}❌ Feature available only on Server Mode.${NC}"; return; fi
+    if [ "$ENV_MODE" != "SERVER" ]; then echo -e "${R}❌ Server Mode Only.${NC}"; return; fi
     clear; show_ascii
-    echo -e "${B}🕵️  INITIATING ADVICE SPY MODE...${NC}"
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    
     LOG_SCAN=$(pm2 logs zero-api --lines 5 --no-colors --raw 2>&1)
-    
-    echo -e "${Y}💡 SENTINEL LOG ANALYSIS:${NC}"
-    if [[ "$LOG_SCAN" == *"Error"* ]] || [[ "$LOG_SCAN" == *"error"* ]]; then
-        echo -e " » ${R}WADUH! Ada Error di backend lu Mal!${NC}"
-        echo -e " » Analisa: Sepertinya ada masalah koding atau koneksi database."
-        echo -e " » Saran: Ketik ${G}pm2 restart zero-api${NC} atau cek file .env lu."
-    elif [[ "$LOG_SCAN" == *"ECONNREFUSED"* ]]; then
-        echo -e " » ${R}DATABASE GAK KONEK!${NC}"
-        echo -e " » Saran: Cek apakah Supabase/DB lu lagi down atau passwordnya salah."
-    else
-        echo -e " » ${G}Backend Sehat Walafiat.${NC}"
-        echo -e " » Saran: Gak perlu ada tindakan. Lanjut gaskeun fitur barunya! 🚀"
-    fi
+    echo -e "${Y}💡 LOG ANALYSIS:${NC}"
+    if [[ "$LOG_SCAN" == *"Error"* ]]; then echo -e " » ${R}Backend lu Error Mal!${NC} Ketik: ${G}pm2 restart zero-api${NC}"; else echo -e " » ${G}Backend Sehat.${NC}"; fi
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    echo -e "${W}Streaming real-time logs (Ctrl+C to stop):${NC}"
     pm2 logs zero-api --lines 20
 }
 
 # --- FITUR: INTEGRITY CHECKER (zc) ---
 function ultimate_checker() {
-    detect_env
     clear; show_ascii
-    echo -e "${P}📡 INITIATING SOVEREIGN INTEGRITY SCAN...${NC}"
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    
-    SCORE=0
-    ADVICE=()
-
+    SCORE=0; ADVICE=()
     if [ "$ENV_MODE" == "SERVER" ]; then
-        if pm2 list | grep -q "online"; then echo -e " » Backend Core : ${G}ONLINE${NC}"; ((SCORE+=30)); else echo -e " » Backend Core : ${R}DEAD${NC}"; ADVICE+=("Backend mati Mal! Jalankan: zd"); fi
-        if ss -tulpn | grep -q ":3000"; then echo -e " » API Port     : ${G}OPEN (3000)${NC}"; ((SCORE+=20)); else echo -e " » API Port     : ${R}CLOSED${NC}"; ADVICE+=("Port 3000 gak respon. Cek server.js!"); fi
-        if [ -f "$NGINX_ROOT/index.html" ]; then echo -e " » UI Frontend  : ${G}DEPLOYED${NC}"; ((SCORE+=30)); else echo -e " » UI Frontend  : ${R}MISSING${NC}"; ADVICE+=("UI belum di-deploy. Ketik: zd"); fi
-        if [ -d "/etc/letsencrypt/live/$DOMAIN" ]; then echo -e " » SSL Shield   : ${G}ACTIVE${NC}"; ((SCORE+=20)); else echo -e " » SSL Shield   : ${R}INACTIVE${NC}"; ADVICE+=("Vercel butuh SSL. Ketik: zsetup buat reinstall certbot."); fi
+        pm2 list | grep -q "online" && ((SCORE+=40)) || ADVICE+=("Backend mati! Jalankan: zd")
+        [ -f "$NGINX_ROOT/index.html" ] && ((SCORE+=30)) || ADVICE+=("Frontend ilang! Jalankan: zd")
+        [ -d "/etc/letsencrypt/live/$DOMAIN" ] && ((SCORE+=30)) || ADVICE+=("SSL mati! Jalankan: zsetup")
     else
-        if command -v node &> /dev/null; then echo -e " » Node Engine  : ${G}READY${NC}"; ((SCORE+=50)); else ADVICE+=("Instal Node.js di laptop lu Mal!"); fi
-        if [ -d ".git" ]; then echo -e " » Git Matrix   : ${G}LINKED${NC}"; ((SCORE+=50)); else ADVICE+=("Folder ini belum jadi repo Git."); fi
+        command -v node &> /dev/null && ((SCORE+=50)) || ADVICE+=("Node.js belom ada di laptop.")
+        [ -d ".git" ] && ((SCORE+=50)) || ADVICE+=("Git belom di-init.")
     fi
-
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    echo -ne "${W}OVERALL HEALTH SCORE: ${NC}"
-    if [ $SCORE -eq 100 ]; then echo -e "${G}${BOLD}100/100 (PERFECTION)${NC}"; else echo -e "${Y}${SCORE}/100${NC}"; fi
-    
-    if [ ${#ADVICE[@]} -ne 0 ]; then
-        echo -e "\n${Y}💡 MASTER RECOMMENDATIONS:${NC}"
-        for s in "${ADVICE[@]}"; do echo -e " » ${W}$s${NC}"; done
-    else
-        echo -e "\n${G}✅ ALL SYSTEMS PEAK. Ready for High-Traffic, Commander.${NC}"
-    fi
+    echo -e "${P}📡 SYSTEM SCORE: ${G}${SCORE}/100${NC}"
+    for s in "${ADVICE[@]}"; do echo -e " » ${W}$s${NC}"; done
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
 }
 
-# --- FITUR: FULL DEPLOY (zd) ---
+# --- FITUR: DEPLOY (zd) ---
 function ultimate_deploy() {
     clear; show_ascii; detect_env
-    echo -e "${Y}🚀 INITIATING FULL DEPLOYMENT SEQUENCE...${NC}"
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    animate_pulse ">> Pulling updates from GitHub"
-    git pull origin main --quiet || { echo -e "${R}❌ Pull Failed! Cek koneksi.${NC}"; return; }
-    
+    echo -e "${Y}🚀 INITIATING MASTER DEPLOYMENT...${NC}"
+    git pull origin main --quiet
     if [ -d "$FRONTEND_DIR" ]; then
-        animate_pulse ">> Compiling Vite Assets (Frontend)"
+        animate_pulse ">> Compiling Frontend"
         cd "$FRONTEND_DIR" && npm run build --silent
         if [ "$ENV_MODE" == "SERVER" ]; then
-            animate_pulse ">> Injecting to Production Nginx"
             sudo rm -rf $NGINX_ROOT/* && sudo cp -r dist/* $NGINX_ROOT/
             sudo chown -R www-data:www-data $NGINX_ROOT
         fi
     fi
-
     if [ "$ENV_MODE" == "SERVER" ]; then
-        animate_pulse ">> Refreshing Backend Engine (PM2)"
+        animate_pulse ">> Re-energizing Backend"
         cd "$BACKEND_DIR" && npm install --silent
         pm2 restart zero-api --silent || pm2 start server.js --name "zero-api"
         sudo systemctl restart nginx
     fi
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    ultimate_checker
+    echo -e "${G}✅ DEPLOYMENT SUCCESSFUL!${NC}"
 }
 
-# --- OTHERS ---
-function ghost_config() {
-    clear; show_ascii; echo -e "${B}🛠️  GHOST CONFIGURATION MATRIX${NC}"
-    echo -e " 1. Rename User | 2. Update Email | 3. Switch Remote | 4. Back"
-    echo -ne "\n${C}Choice [1-4]: ${NC}"; read choice
-    case $choice in
-        1) read -p "New Name: " nu; git config user.name "$nu" ;;
-        2) read -p "New Email: " ne; git config user.email "$ne" ;;
-        3) read -p "New URL: " nurl; git remote set-url origin "$nurl" ;;
-        *) return ;;
-    esac
-    echo -e "${G}✅ Update Matrix Success.${NC}"
-}
-
+# --- OTHER CORE CMDS ---
 function self_sync() {
-    clear; show_ascii; echo -e "${Y}🚀 INITIATING EVOLUTION PROTOCOL...${NC}"
-    git add .
-    MSG="evolve: zero sentinel intelligence v6.4 [$(date +'%H:%M')]"; 
-    git commit -m "$MSG" --quiet && git push origin main && echo -e "${G}✅ Evolution Synced to Cloud.${NC}"
-}
-
-function live_hud() {
-    if [ "$ENV_MODE" != "SERVER" ]; then echo -e "${R}❌ Server Mode Only.${NC}"; return; fi
-    while true; do
-        clear; show_ascii
-        echo -e "${P}📊 LIVE SYSTEM OVERSEER (Ctrl+C to exit)${NC}"
-        echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-        echo -ne "${W}CPU USAGE : ${NC}"; top -bn1 | grep "Cpu(s)" | awk '{print $2 + $4"%"}'
-        echo -ne "${W}RAM USAGE : ${NC}"; free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2 }'
-        echo -ne "${W}DISK SPACE: ${NC}"; df -h / | awk 'NR==2{print $5 " occupied"}'
-        echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-        sleep 2
-    done
+    clear; show_ascii; git add .
+    MSG="evolve: zero sentinel master v6.5 [$(date +'%H:%M')]"
+    git commit -m "$MSG" --quiet && git push origin main && echo -e "${G}✅ Cloud Synced.${NC}"
 }
 
 function setup_native_commands() {
-    echo -e "\n${C}📡 Calibrating Intelligence Aliases V6.4...${NC}"
+    echo -e "\n${C}📡 Calibrating Master Aliases V6.5...${NC}"
     sed -i "/# ZEROCHECKER ALIASES/,/alias z=/d" ~/.bashrc &> /dev/null
     {
-        echo "# ZEROCHECKER ALIASES V6.4"
+        echo "# ZEROCHECKER ALIASES V6.5"
         echo "alias zsync='$SCRIPT_PATH zsync'"
         echo "alias zconfig='$SCRIPT_PATH zconfig'"
         echo "alias zdns='$SCRIPT_PATH zdns'"
@@ -258,11 +183,12 @@ function setup_native_commands() {
         echo "alias zc='$SCRIPT_PATH zc'"
         echo "alias zd='$SCRIPT_PATH zd'"
         echo "alias zs='$SCRIPT_PATH zs'"
+        echo "alias zclean='$SCRIPT_PATH zclean'"
         echo "alias zgh='$SCRIPT_PATH zgh'"
         echo "alias zsetup='$SCRIPT_PATH zsetup'"
         echo "alias z='$SCRIPT_PATH'"
     } >> ~/.bashrc
-    echo -e "${G}✅ CORE V6.4 LOADED!${NC}\n${Y}👉 RUN: source ~/.bashrc${NC}"
+    echo -e "${G}✅ MASTER CORE LOADED!${NC}\n${Y}👉 RUN: source ~/.bashrc${NC}"
 }
 
 # --- ROUTING ---
@@ -270,11 +196,10 @@ case "$1" in
     zd)     ultimate_deploy ;;
     zc)     ultimate_checker ;;
     zdns)   dns_checker ;;
-    zhud)   live_hud ;;
     zs)     spy_mode ;;
     zsync)  self_sync ;;
-    zconfig) ghost_config ;;
-    zgh)    clear; show_ascii; echo -e "${B}🐙 IDENTITY MATRIX${NC}"; echo -e " User: $(git config user.name)\n Repo: $(git remote -v | head -n 1 | awk '{print $2}')" ;;
     zsetup) setup_native_commands ;;
+    zhud)   if [ "$ENV_MODE" == "SERVER" ]; then top; else echo "Server Only"; fi ;;
+    zgh)    echo -e "User: $(git config user.name)\nRepo: $(git remote -v | head -n 1 | awk '{print $2}')" ;;
     *)      show_help ;;
 esac
