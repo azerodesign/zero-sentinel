@@ -33,4 +33,18 @@ zm     : Monitor Sumber Daya VPS
 
 zc     : Diagnosa Kesehatan Sistem
 
+📦 Panduan Maintenance (Developer Only)
+
+Jika kamu ingin melakukan push pertama kali atau update manual:
+
+Rename Branch (Fix Refspec Error):
+
+git branch -M main
+
+
+Push ke GitHub:
+
+git push -u origin main
+
+
 Created with 🔥 by Kamal (azerodesign)
