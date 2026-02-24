@@ -1,16 +1,15 @@
 #!/bin/bash
 
 # ==========================================================
-# 👑 ZERO SENTINEL V5.5 - THE TERMINAL MASTER (FINAL)
+# 👑 ZERO SENTINEL V5.7.1 - THE GHOST CONFIGURATOR
 # ==========================================================
 # Author: Gemini for Kamal (The Supreme Commander)
-# Mode: Environment Aware v5.5 | Detection: Auto-Switch
-# Evolution: Terminal Mode & Server Mode Supported
-# Fix: VS Code Integrated Terminal Support & Shell Check
+# Version: 5.7.1 | Repository: azerodesign/zero-sentinel
+# Feature: Interactive Identity & Repository Configuration
+# Fix: Advanced Ghost-Auth Matrix & UI Consistency
 # ==========================================================
 
 # --- KONFIGURASI JALUR ---
-# Mencari lokasi absolut file ini dimanapun ia berada
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 NGINX_ROOT="/var/www/html/zero-monitor"
@@ -34,29 +33,17 @@ function detect_env() {
     fi
 }
 
-# --- ANIMASI LOADING V5.5 ---
-function animate_pulse() {
-    local message=$1
-    echo -ne "${W}${message}${NC} "
-    for i in {1..5}; do
-        echo -ne "${C}▰"
-        sleep 0.1
-    done
-    echo -e "${G} READY${NC}"
-}
-
 function startup_sequence() {
     clear
     detect_env
-    echo -e "${P}${BOLD}Initializing Sentinel Neural-Link v5.5...${NC}"
+    echo -e "${P}${BOLD}Initializing Sentinel Neural-Link v5.7.1...${NC}"
     sleep 0.3
-    echo -e "${B}▓▓▒▒░░ Environment: $ENV_LABEL${NC}"
-    echo -e "${B}▓▓▓▓▒▒░░ Shell: $SHELL${NC}"
-    echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - CORE STABILIZED${NC}"
+    echo -ne "${B}▓▓▒▒░░ Connection: ${G}ESTABLISHED${NC}"
+    echo -e " | Mode: $ENV_LABEL"
+    echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - SYSTEM STABILIZED${NC}"
     sleep 0.4
 }
 
-# --- ASCII ART: ZERO SENTINEL V5.5 ---
 function show_ascii() {
     echo -e "${C}${BOLD}"
     echo "  ███████╗███████╗██████╗  ██████╗     ███████╗███████╗███╗   ██╗████████╗██╗███╗   ██╗███████╗██╗     "
@@ -65,7 +52,7 @@ function show_ascii() {
     echo "   ███╔╝  ██╔══╝  ██╔══██╗██║   ██║    ╚════██║██╔══╝  ██║╚██╗██║   ██║   ██║██║╚██╗██║██╔══╝  ██║     "
     echo "  ███████╗███████╗██║  ██║╚██████╔╝    ███████║███████╗██║ ╚████║   ██║   ██║██║ ╚████║███████╗███████╗"
     echo "  ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝     ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝"
-    echo -e "                                 ${W}[ THE TERMINAL MASTER V5.5 ]${NC}"
+    echo -e "                                 ${W}[ THE GHOST CONFIGURATOR V5.7.1 ]${NC}"
 }
 
 # --- MENU UTAMA ---
@@ -73,27 +60,108 @@ function show_help() {
     startup_sequence
     show_ascii
     echo -e "${P}╭──────────────────────────────────────────────────────────────────────────╮${NC}"
-    echo -e "${P}│${NC}  ${W}🚀 SENTINEL COMMAND CENTER ${NC}        ${G}$ENV_MODE MODE${NC}     ${C}[ AUTONOMOUS ]${NC} ${P}│${NC}"
+    echo -e "${P}│${NC}  ${W}🚀 SENTINEL COMMAND CENTER ${NC}        ${G}$ENV_MODE MODE${NC}     ${C}[ SOVEREIGN ]${NC}    ${P}│${NC}"
     echo -e "${P}├──────────────────────────────────────────────────────────────────────────┤${NC}"
     echo -e "${P}│${NC}  ${C}CORE OPERATIONS:${NC}                                                       ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zsync${NC}           ${W}» Self-Evolution: Auto-Commit & Push Sentinel${NC}        ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zsync${NC}           ${W}» Self-Evolution: Autonomous Commit & Cloud Sync${NC}       ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zconfig${NC}         ${W}» Ghost-Config: Change GitHub Auth & Repository URL${NC}    ${P}│${NC}"
     
     if [ "$ENV_MODE" == "SERVER" ]; then
         echo -e "${P}│${NC}  ${G}zd${NC}              ${W}» Ultimate: Unified Check & Auto-Deploy${NC}              ${P}│${NC}"
         echo -e "${P}│${NC}  ${G}zhud${NC}            ${W}» LIVE Heads-Up Display (Auto-Refresh)${NC}               ${P}│${NC}"
         echo -e "${P}│${NC}  ${G}zc${NC}              ${W}» Deep Integrity & System Health Scan${NC}                ${P}│${NC}"
-        echo -e "${P}│${NC}  ${G}zs${NC}              ${W}» Spy Mode: Real-time Production Logs${NC}                ${P}│${NC}"
     else
         echo -e "${P}│${NC}  ${Y}zd${NC}              ${W}» Local Build: Compile assets for production${NC}         ${P}│${NC}"
         echo -e "${P}│${NC}  ${Y}zc${NC}              ${W}» Local Check: Repository & Node health scan${NC}         ${P}│${NC}"
     fi
 
-    echo -e "${P}│${NC}  ${G}zgh${NC}             ${W}» GitHub Pro Auth & Remote Sync Status${NC}               ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zdocs${NC}           ${W}» VS Code & Terminal Usage Guide${NC}                     ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zgh${NC}             ${W}» Ghost Auth: Repository & Native Identity Status${NC}    ${P}│${NC}"
     echo -e "├──────────────────────────────────────────────────────────────────────────┤"
-    echo -e "│  ${Y}zsetup${NC}          ${W}» Re-install Aliases & Fix VS Code Shell${NC}              ${P}│${NC}"
+    echo -e "│  ${Y}zsetup${NC}          ${W}» Re-install Aliases & Core Calibration${NC}              ${P}│${NC}"
     echo -e "╰──────────────────────────────────────────────────────────────────────────╯"
-    echo -e "   ${BOLD}${C}STATUS:${NC} Commander detected. | ${W}Ketik 'z' untuk menu ini.${NC}"
+    echo -e "   ${BOLD}${C}STATUS:${NC} Architect ready. | ${W}Ketik 'z' untuk menu ini.${NC}"
+}
+
+# --- CONFIG MANAGER (zconfig) ---
+function ghost_config() {
+    clear
+    show_ascii
+    echo -e "${B}🛠️  INITIATING GHOST CONFIGURATION MATRIX...${NC}"
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
+    
+    echo -e "${Y}Pilih parameter yang ingin diubah:${NC}"
+    echo -e " ${W}1.${NC} Ganti Git Username"
+    echo -e " ${W}2.${NC} Ganti Git Email"
+    echo -e " ${W}3.${NC} Ganti Repository URL (Remote Origin)"
+    echo -e " ${W}4.${NC} Kembali ke Menu"
+    echo -ne "\n${C}Input [1-4]: ${NC}"
+    read choice
+
+    case $choice in
+        1)
+            echo -ne "\n${W}Username Baru: ${NC}"
+            read new_user
+            git config user.name "$new_user"
+            echo -e "${G}✅ Username berhasil diubah jadi: $new_user${NC}"
+            ;;
+        2)
+            echo -ne "\n${W}Email Baru: ${NC}"
+            read new_email
+            git config user.email "$new_email"
+            echo -e "${G}✅ Email berhasil diubah jadi: $new_email${NC}"
+            ;;
+        3)
+            echo -ne "\n${W}URL Repo Baru (HTTPS): ${NC}"
+            read new_url
+            if [ -n "$new_url" ]; then
+                git remote set-url origin "$new_url"
+                echo -e "${G}✅ Remote URL berhasil diubah jadi: $new_url${NC}"
+            else
+                echo -e "${R}❌ URL tidak boleh kosong Mal!${NC}"
+            fi
+            ;;
+        4)
+            show_help
+            return
+            ;;
+        *)
+            echo -e "${R}❌ Pilihan gak valid!${NC}"
+            ;;
+    esac
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
+    echo -e "${C}Tips:${NC} Ketik ${G}zgh${NC} buat liat hasilnya."
+}
+
+# --- GITHUB CHECKER (zgh) ---
+function github_checker() {
+    clear
+    show_ascii
+    echo -e "${B}🐙 INITIATING GHOST AUTH MATRIX...${NC}"
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
+    
+    USER_NAME=$(git config user.name)
+    USER_EMAIL=$(git config user.email)
+    REMOTE_URL=$(git remote -v | head -n 1 | awk '{print $2}')
+    BRANCH_NAME=$(git branch --show-current)
+    
+    echo -e "\n${C}[ IDENTITY ]${NC}"
+    echo -e " » User   : ${W}${USER_NAME:-"Undefined"}${NC}"
+    echo -e " » Email  : ${W}${USER_EMAIL:-"Undefined"}${NC}"
+    
+    echo -e "\n${C}[ REPOSITORY ]${NC}"
+    echo -e " » Remote : ${W}${REMOTE_URL:-"No Remote Found"}${NC}"
+    echo -e " » Branch : ${G}${BRANCH_NAME}${NC}"
+    
+    echo -e "\n${C}[ SYNC STATUS ]${NC}"
+    CHANGES=$(git status -s | wc -l)
+    if [ "$CHANGES" -gt 0 ]; then
+        echo -e " » Status : ${Y}Pending Evolution (${CHANGES} files modified)${NC}"
+        echo -e " » Action : Ketik ${G}zsync${NC} untuk sinkronisasi."
+    else
+        echo -e " » Status : ${G}Cloud Synced (Peak Form)${NC}"
+    fi
+    echo -e "\n${Y}Ingin ganti auth/repo? Ketik: ${G}zconfig${NC}"
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
 }
 
 # --- FITUR: SELF-SYNC (zsync) ---
@@ -107,91 +175,68 @@ function self_sync() {
         return
     fi
 
-    MESSAGES=("evolve: terminal master v5.5" "feat: vs code integration fix" "patch: shell detection improved" "sync: command master update")
+    MESSAGES=(
+        "evolve: upgrade sentinel to v5.7.1" 
+        "feat: configuration matrix added" 
+        "patch: ghost identity switcher" 
+        "core: sovereign config manager upgrade"
+    )
     AUTO_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
     FINAL_MSG="$AUTO_MSG [$(date +'%H:%M:%S')]"
     
     git add .
     if git diff --cached --quiet; then
-        echo -e "${Y}ℹ️  No changes detected.${NC}"
+        echo -e "${Y}ℹ️  No changes detected. System is in peak form.${NC}"
     else
-        animate_pulse "Generating commit: $FINAL_MSG"
+        echo -e "${C}>> Preparing Autonomous Commit: ${W}$FINAL_MSG${NC}"
         git commit -m "$FINAL_MSG" --quiet
-        animate_pulse "Pushing to GitHub"
+        echo -e "${B}>> Sending Evolution to Cloud Matrix...${NC}"
         git push origin main
-        [ $? -eq 0 ] && echo -e "\n${G}${BOLD}✅ EVOLUTION COMPLETED!${NC}" || echo -e "\n${R}❌ Push Failed.${NC}"
+        
+        if [ $? -eq 0 ]; then
+            echo -e "\n${G}${BOLD}✅ EVOLUTION COMPLETED! Sentinel is synced.${NC}"
+        else
+            echo -e "\n${R}❌ Push Failed.${NC}"
+            echo -e "Tips: Pakai ${G}zconfig${NC} kalau remote URL-nya salah."
+        fi
     fi
-}
-
-# --- DOCS: VS CODE GUIDE (zdocs) ---
-function show_docs() {
-    clear; show_ascii
-    echo -e "${B}╭──────────────────────────────────────────────────────────────────────────╮${NC}"
-    echo -e "${B}│${NC}  ${W}📖 SENTINEL VS CODE INTEGRATION (NO MORE BOLAK-BALIK)${NC}               ${B}│${NC}"
-    echo -e "${B}╰──────────────────────────────────────────────────────────────────────────╯${NC}"
-    echo -e "${Y}1. JALANKAN SENTINEL DENGAN 1 TOMBOL (SHORTCUT)${NC}"
-    echo -e "   - Di VS Code, tekan ${W}F1${NC} atau ${W}Ctrl+Shift+P${NC}."
-    echo -e "   - Ketik ${W}Tasks: Configure Task${NC} dan pilih ${W}Create tasks.json from template${NC}."
-    echo -e "   - Pilih ${W}Others${NC}, lalu ganti isinya dengan JSON ini:"
-    echo -e ""
-    echo -e "   { \"label\": \"RUN SENTINEL\", \"type\": \"shell\", \"command\": \"./git_master.sh\", \"group\": \"build\" }"
-    echo -e ""
-    echo -e "   - Sekarang lu tinggal pencet ${G}Ctrl + Shift + B${NC} buat jalanin Sentinel!"
-    
-    echo -e "\n${Y}2. SETTING TERMINAL DEFAULT:${NC}"
-    echo -e "   - Klik tanda panah bawah di sebelah ${W}+${NC} pada terminal VS Code."
-    echo -e "   - Pilih ${G}Select Default Profile${NC} -> Pilih ${G}Git Bash${NC}."
-
-    echo -e "\n${Y}3. TIPS MALAM INI:${NC}"
-    echo -e "   - Gunakan ${G}zsync${NC} langsung di terminal bawah VS Code lu."
-    echo -e "   - Gak perlu buka terminal Windows lagi, Mal."
-    
-    echo -e "\n${B}──────────────────────────────────────────────────────────────────────────${NC}"
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
 }
 
 # --- SETUP ALIAS (zsetup) ---
 function setup_native_commands() {
-    echo -e "\n${C}📡 Synchronizing Aliases for V5.5 (Terminal Master)...${NC}"
-    
-    # 1. FIX: Ensure .bash_profile exists for Windows
+    echo -e "\n${C}📡 Synchronizing Sovereign Aliases for V5.7.1...${NC}"
     if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
-        if [ ! -f ~/.bash_profile ]; then
-            echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' > ~/.bash_profile
-        fi
+        [ ! -f ~/.bash_profile ] && echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' > ~/.bash_profile
     fi
-
-    # 2. PURGE: Remove old corrupted blocks
     if [ -f ~/.bashrc ]; then
         sed -i 's/\xEF\xBB\xBF//g' ~/.bashrc
         sed -i 's/[\d128-\d255]//g' ~/.bashrc
     fi
     sed -i "/# ZEROCHECKER ALIASES/,/alias z=/d" ~/.bashrc &> /dev/null
-    
-    # 3. INSTALL: Write clean aliases pointing to absolute path
     {
-        echo "# ZEROCHECKER ALIASES V5.5"
+        echo "# ZEROCHECKER ALIASES V5.7.1"
         echo "alias zsync='$SCRIPT_PATH zsync'"
+        echo "alias zconfig='$SCRIPT_PATH zconfig'"
         echo "alias zhud='$SCRIPT_PATH zhud'"
         echo "alias zm='$SCRIPT_PATH zm'"
         echo "alias zc='$SCRIPT_PATH zc'"
         echo "alias zd='$SCRIPT_PATH zd'"
         echo "alias zs='$SCRIPT_PATH zs'"
         echo "alias zgh='$SCRIPT_PATH zgh'"
-        echo "alias zsf='$SCRIPT_PATH zsf'"
         echo "alias zdocs='$SCRIPT_PATH zdocs'"
         echo "alias zsetup='$SCRIPT_PATH zsetup'"
         echo "alias z='$SCRIPT_PATH'"
     } >> ~/.bashrc
-
-    echo -e "${G}✅ SENTINEL SUPREME V5.5 CALIBRATED!${NC}"
-    echo -e "${Y}👉 JALANKAN INI: source ~/.bashrc${NC}"
+    echo -e "${G}✅ SENTINEL SUPREME V5.7.1 CALIBRATED!${NC}"
+    echo -e "${Y}👉 JALANKAN INI SEKARANG: source ~/.bashrc${NC}"
 }
 
 # --- ROUTING ---
 case "$1" in
     zsync)  self_sync ;;
+    zgh)    github_checker ;;
+    zconfig) ghost_config ;;
     zsetup) setup_native_commands ;;
-    zdocs)  show_docs ;;
-    zgh)    gh auth status ;;
     *)      show_help ;;
 esac
