@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # ==========================================================
-# 👑 ZERO SENTINEL V5.7.1 - THE GHOST CONFIGURATOR
+# 👑 ZERO SENTINEL V6.0 - THE ORACLE EDITION
 # ==========================================================
 # Author: Gemini for Kamal (The Supreme Commander)
-# Version: 5.7.1 | Repository: azerodesign/zero-sentinel
-# Feature: Interactive Identity & Repository Configuration
-# Fix: Advanced Ghost-Auth Matrix & UI Consistency
+# Version: 6.0 | Mode: Multi-Platform (Oracle Intelligence)
+# Feature: DNS Validator, Integrated Lifecycle, Auto-Sync
+# Fix: Connection Diagnostics & UI Re-branding
 # ==========================================================
 
 # --- KONFIGURASI JALUR ---
@@ -36,11 +36,11 @@ function detect_env() {
 function startup_sequence() {
     clear
     detect_env
-    echo -e "${P}${BOLD}Initializing Sentinel Neural-Link v5.7.1...${NC}"
+    echo -e "${P}${BOLD}Initializing Zero Sentinel Oracle Link v6.0...${NC}"
     sleep 0.3
-    echo -ne "${B}▓▓▒▒░░ Connection: ${G}ESTABLISHED${NC}"
+    echo -ne "${B}▓▓▒▒░░ Connection: ${G}ACTIVE${NC}"
     echo -e " | Mode: $ENV_LABEL"
-    echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - SYSTEM STABILIZED${NC}"
+    echo -e "${G}▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100% - CORE STABILIZED${NC}"
     sleep 0.4
 }
 
@@ -52,7 +52,7 @@ function show_ascii() {
     echo "   ███╔╝  ██╔══╝  ██╔══██╗██║   ██║    ╚════██║██╔══╝  ██║╚██╗██║   ██║   ██║██║╚██╗██║██╔══╝  ██║     "
     echo "  ███████╗███████╗██║  ██║╚██████╔╝    ███████║███████╗██║ ╚████║   ██║   ██║██║ ╚████║███████╗███████╗"
     echo "  ╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝     ╚══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚═╝╚═╝  ╚═══╝╚══════╝╚══════╝"
-    echo -e "                                 ${W}[ THE GHOST CONFIGURATOR V5.7.1 ]${NC}"
+    echo -e "                                 ${W}[ THE ORACLE INTELLIGENCE V6.0 ]${NC}"
 }
 
 # --- MENU UTAMA ---
@@ -60,183 +60,127 @@ function show_help() {
     startup_sequence
     show_ascii
     echo -e "${P}╭──────────────────────────────────────────────────────────────────────────╮${NC}"
-    echo -e "${P}│${NC}  ${W}🚀 SENTINEL COMMAND CENTER ${NC}        ${G}$ENV_MODE MODE${NC}     ${C}[ SOVEREIGN ]${NC}    ${P}│${NC}"
+    echo -e "${P}│${NC}  ${W}🚀 ZERO SENTINEL SUPREME ${NC}          ${G}$ENV_MODE MODE${NC}     ${C}[ ORACLE ]${NC}      ${P}│${NC}"
     echo -e "${P}├──────────────────────────────────────────────────────────────────────────┤${NC}"
-    echo -e "${P}│${NC}  ${C}CORE OPERATIONS:${NC}                                                       ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zsync${NC}           ${W}» Self-Evolution: Autonomous Commit & Cloud Sync${NC}       ${P}│${NC}"
-    echo -e "${P}│${NC}  ${G}zconfig${NC}         ${W}» Ghost-Config: Change GitHub Auth & Repository URL${NC}    ${P}│${NC}"
+    echo -e "${P}│${NC}  ${C}DIAGNOSTICS & FIX:${NC}                                                     ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zdns${NC}            ${W}» DNS Oracle: Verify Domain Propagation & IP Match${NC}    ${P}│${NC}"
+    echo -ne "${P}│${NC}  ${G}zc${NC}              ${W}» Health Check: Deep Scan Zero Monitor Status${NC} "
+    [ "$ENV_MODE" == "SERVER" ] && echo -e "     ${P}│${NC}" || echo -e "      ${P}│${NC}"
+    
+    echo -e "${P}│${NC}  ${C}APP MANAGEMENT:${NC}                                                        ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zd${NC}              ${W}» Deployment: One-Tap Build & Deploy App Core${NC}        ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zsync${NC}           ${W}» Evolution: Autonomous Git Sync (Sentinel Update)${NC}    ${P}│${NC}"
     
     if [ "$ENV_MODE" == "SERVER" ]; then
-        echo -e "${P}│${NC}  ${G}zd${NC}              ${W}» Ultimate: Unified Check & Auto-Deploy${NC}              ${P}│${NC}"
-        echo -e "${P}│${NC}  ${G}zhud${NC}            ${W}» LIVE Heads-Up Display (Auto-Refresh)${NC}               ${P}│${NC}"
-        echo -e "${P}│${NC}  ${G}zc${NC}              ${W}» Deep Integrity & System Health Scan${NC}                ${P}│${NC}"
-    else
-        echo -e "${P}│${NC}  ${Y}zd${NC}              ${W}» Local Build: Compile assets for production${NC}         ${P}│${NC}"
-        echo -e "${P}│${NC}  ${Y}zc${NC}              ${W}» Local Check: Repository & Node health scan${NC}         ${P}│${NC}"
+        echo -e "${P}│${NC}  ${G}zhud${NC}            ${W}» LIVE Stats: Real-time VPS Resource HUD${NC}             ${P}│${NC}"
+        echo -e "${P}│${NC}  ${G}zs${NC}              ${W}» Spy Logs: Stream Backend & Nginx Logs${NC}              ${P}│${NC}"
     fi
 
+    echo -e "${P}│${NC}  ${C}CONFIGURATION:${NC}                                                         ${P}│${NC}"
+    echo -e "${P}│${NC}  ${G}zconfig${NC}         ${W}» Identity: Change Git Auth & Repository Path${NC}        ${P}│${NC}"
     echo -e "${P}│${NC}  ${G}zgh${NC}             ${W}» Ghost Auth: Repository & Native Identity Status${NC}    ${P}│${NC}"
     echo -e "├──────────────────────────────────────────────────────────────────────────┤"
-    echo -e "│  ${Y}zsetup${NC}          ${W}» Re-install Aliases & Core Calibration${NC}              ${P}│${NC}"
+    echo -e "│  ${Y}zsetup${NC}          ${W}» Core Recalibration & Alias Re-install${NC}               ${P}│${NC}"
     echo -e "╰──────────────────────────────────────────────────────────────────────────╯"
-    echo -e "   ${BOLD}${C}STATUS:${NC} Architect ready. | ${W}Ketik 'z' untuk menu ini.${NC}"
+    echo -e "   ${BOLD}${C}LOG:${NC} Sentinel is watching. | ${W}Ketik 'z' untuk menu ini.${NC}"
 }
 
-# --- CONFIG MANAGER (zconfig) ---
-function ghost_config() {
+# --- FITUR: DNS CHECKER (zdns) ---
+function dns_checker() {
     clear
     show_ascii
-    echo -e "${B}🛠️  INITIATING GHOST CONFIGURATION MATRIX...${NC}"
+    echo -e "${B}🔮 INITIATING DNS ORACLE DIAGNOSTIC...${NC}"
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
     
-    echo -e "${Y}Pilih parameter yang ingin diubah:${NC}"
-    echo -e " ${W}1.${NC} Ganti Git Username"
-    echo -e " ${W}2.${NC} Ganti Git Email"
-    echo -e " ${W}3.${NC} Ganti Repository URL (Remote Origin)"
-    echo -e " ${W}4.${NC} Kembali ke Menu"
-    echo -ne "\n${C}Input [1-4]: ${NC}"
-    read choice
+    # Ambil IP VPS ini (Public)
+    LOCAL_IP=$(curl -s https://ifconfig.me)
+    # Ambil IP yang kedaftar di Domain
+    DOMAIN_IP=$(dig +short $DOMAIN | tail -n1)
 
-    case $choice in
-        1)
-            echo -ne "\n${W}Username Baru: ${NC}"
-            read new_user
-            git config user.name "$new_user"
-            echo -e "${G}✅ Username berhasil diubah jadi: $new_user${NC}"
-            ;;
-        2)
-            echo -ne "\n${W}Email Baru: ${NC}"
-            read new_email
-            git config user.email "$new_email"
-            echo -e "${G}✅ Email berhasil diubah jadi: $new_email${NC}"
-            ;;
-        3)
-            echo -ne "\n${W}URL Repo Baru (HTTPS): ${NC}"
-            read new_url
-            if [ -n "$new_url" ]; then
-                git remote set-url origin "$new_url"
-                echo -e "${G}✅ Remote URL berhasil diubah jadi: $new_url${NC}"
-            else
-                echo -e "${R}❌ URL tidak boleh kosong Mal!${NC}"
-            fi
-            ;;
-        4)
-            show_help
-            return
-            ;;
-        *)
-            echo -e "${R}❌ Pilihan gak valid!${NC}"
-            ;;
-    esac
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    echo -e "${C}Tips:${NC} Ketik ${G}zgh${NC} buat liat hasilnya."
-}
-
-# --- GITHUB CHECKER (zgh) ---
-function github_checker() {
-    clear
-    show_ascii
-    echo -e "${B}🐙 INITIATING GHOST AUTH MATRIX...${NC}"
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
+    echo -e "${C}[ NETWORK INFO ]${NC}"
+    echo -e " » Target Domain : ${W}${DOMAIN}${NC}"
+    echo -e " » Machine IP    : ${W}${LOCAL_IP}${NC}"
     
-    USER_NAME=$(git config user.name)
-    USER_EMAIL=$(git config user.email)
-    REMOTE_URL=$(git remote -v | head -n 1 | awk '{print $2}')
-    BRANCH_NAME=$(git branch --show-current)
-    
-    echo -e "\n${C}[ IDENTITY ]${NC}"
-    echo -e " » User   : ${W}${USER_NAME:-"Undefined"}${NC}"
-    echo -e " » Email  : ${W}${USER_EMAIL:-"Undefined"}${NC}"
-    
-    echo -e "\n${C}[ REPOSITORY ]${NC}"
-    echo -e " » Remote : ${W}${REMOTE_URL:-"No Remote Found"}${NC}"
-    echo -e " » Branch : ${G}${BRANCH_NAME}${NC}"
-    
-    echo -e "\n${C}[ SYNC STATUS ]${NC}"
-    CHANGES=$(git status -s | wc -l)
-    if [ "$CHANGES" -gt 0 ]; then
-        echo -e " » Status : ${Y}Pending Evolution (${CHANGES} files modified)${NC}"
-        echo -e " » Action : Ketik ${G}zsync${NC} untuk sinkronisasi."
+    if [ -z "$DOMAIN_IP" ]; then
+        echo -e " » Resolved IP   : ${R}NONE (Domain not pointing anywhere)${NC}"
+        echo -e "\n${R}❌ ERROR: Domain lu belum kedaftar di DNS Mal!${NC}"
+        echo -e "Solusi: Cek Cloudflare lu, buat A Record 'api' arahin ke $LOCAL_IP."
     else
-        echo -e " » Status : ${G}Cloud Synced (Peak Form)${NC}"
-    fi
-    echo -e "\n${Y}Ingin ganti auth/repo? Ketik: ${G}zconfig${NC}"
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-}
-
-# --- FITUR: SELF-SYNC (zsync) ---
-function self_sync() {
-    clear; show_ascii
-    echo -e "${Y}🚀 INITIATING SELF-EVOLUTION PROTOCOL...${NC}"
-    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
-    
-    if [ ! -d ".git" ]; then
-        echo -e "${R}❌ Error: Folder ini bukan repositori Git!${NC}"
-        return
-    fi
-
-    MESSAGES=(
-        "evolve: upgrade sentinel to v5.7.1" 
-        "feat: configuration matrix added" 
-        "patch: ghost identity switcher" 
-        "core: sovereign config manager upgrade"
-    )
-    AUTO_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
-    FINAL_MSG="$AUTO_MSG [$(date +'%H:%M:%S')]"
-    
-    git add .
-    if git diff --cached --quiet; then
-        echo -e "${Y}ℹ️  No changes detected. System is in peak form.${NC}"
-    else
-        echo -e "${C}>> Preparing Autonomous Commit: ${W}$FINAL_MSG${NC}"
-        git commit -m "$FINAL_MSG" --quiet
-        echo -e "${B}>> Sending Evolution to Cloud Matrix...${NC}"
-        git push origin main
-        
-        if [ $? -eq 0 ]; then
-            echo -e "\n${G}${BOLD}✅ EVOLUTION COMPLETED! Sentinel is synced.${NC}"
+        echo -e " » Resolved IP   : ${W}${DOMAIN_IP}${NC}"
+        if [ "$LOCAL_IP" == "$DOMAIN_IP" ]; then
+            echo -e "\n${G}✅ SUCCESS: Domain and VPS are perfectly synced!${NC}"
+            echo -e "Kalau masih 0%, cek link https://$DOMAIN/ping di browser lu."
         else
-            echo -e "\n${R}❌ Push Failed.${NC}"
-            echo -e "Tips: Pakai ${G}zconfig${NC} kalau remote URL-nya salah."
+            echo -e "\n${R}❌ MISMATCH: Domain nembak ke IP yang salah!${NC}"
+            echo -e "Target seharusnya: ${G}$LOCAL_IP${NC}"
+            echo -e "Solusi: Update IP di Cloudflare lu ke $LOCAL_IP."
         fi
     fi
     echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
 }
 
-# --- SETUP ALIAS (zsetup) ---
+# --- ZERO DEPLOY (zd) ---
+function ultimate_deploy() {
+    clear; show_ascii; detect_env
+    echo -e "${Y}🚀 INITIATING ZERO MONITOR DEPLOYMENT PROTOCOL...${NC}"
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
+    echo -ne "${C}>> Step 1: Syncing codebase...${NC} "; git pull origin main --quiet && echo -e "${G}DONE${NC}" || { echo -e "${R}FAILED${NC}"; return; }
+    if [ -d "$FRONTEND_DIR" ]; then
+        echo -ne "${C}>> Step 2: Compiling Frontend (Vite)...${NC} "; cd "$FRONTEND_DIR" && npm run build --silent && echo -e "${G}DONE${NC}" || { echo -e "${R}BUILD ERROR${NC}"; return; }
+        if [ "$ENV_MODE" == "SERVER" ]; then
+            echo -ne "${C}>> Step 3: Injecting assets to Nginx...${NC} "; sudo rm -rf $NGINX_ROOT/* && sudo cp -r dist/* $NGINX_ROOT/ && sudo chown -R www-data:www-data $NGINX_ROOT && echo -e "${G}DONE${NC}"
+        fi
+    fi
+    if [ "$ENV_MODE" == "SERVER" ]; then
+        echo -ne "${C}>> Step 4: Re-energizing Backend (PM2)...${NC} "; cd "$BACKEND_DIR" && npm install --silent; pm2 restart zero-api --silent || pm2 start server.js --name "zero-api" --silent; sudo systemctl restart nginx; echo -e "${G}DONE${NC}"
+    fi
+    echo -e "${BLUE}──────────────────────────────────────────────────────────────────────────${NC}"
+    ultimate_checker
+    echo -e "${G}${BOLD}✅ DEPLOYMENT COMPLETE!${NC}"
+}
+
+# --- HEALTH CHECKER (zc) ---
+function ultimate_checker() {
+    detect_env
+    echo -e "\n${P}📡 ZERO MONITOR INTEGRITY SCAN ($ENV_MODE):${NC}"
+    if [ "$ENV_MODE" == "SERVER" ]; then
+        pm2 list | grep -q "online" && echo -e " » Backend Core : ${G}ONLINE${NC}" || echo -e " » Backend Core : ${R}DEAD${NC}"
+        ss -tulpn | grep -q ":3000" && echo -e " » API Port     : ${G}OPEN (3000)${NC}" || echo -e " » API Port     : ${R}CLOSED${NC}"
+        [ -f "$NGINX_ROOT/index.html" ] && echo -e " » UI Frontend  : ${G}DEPLOYED${NC}" || echo -e " » UI Frontend  : ${R}NOT FOUND${NC}"
+        [ -d "/etc/letsencrypt/live/$DOMAIN" ] && echo -e " » SSL Shield   : ${G}ACTIVE${NC}" || echo -e " » SSL Shield   : ${R}INACTIVE${NC}"
+    else
+        command -v node &> /dev/null && echo -e " » Node Engine  : ${G}READY${NC}" || echo -e " » Node Engine  : ${R}MISSING${NC}"
+        [ -d "$FRONTEND_DIR/node_modules" ] && echo -e " » Dependencies : ${G}INSTALLED${NC}" || echo -e " » Dependencies : ${Y}MISSING${NC}"
+    fi
+}
+
+# --- SETUP & ROUTING ---
 function setup_native_commands() {
-    echo -e "\n${C}📡 Synchronizing Sovereign Aliases for V5.7.1...${NC}"
-    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" ]]; then
-        [ ! -f ~/.bash_profile ] && echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' > ~/.bash_profile
-    fi
-    if [ -f ~/.bashrc ]; then
-        sed -i 's/\xEF\xBB\xBF//g' ~/.bashrc
-        sed -i 's/[\d128-\d255]//g' ~/.bashrc
-    fi
+    echo -e "\n${C}📡 Calibrating Sovereign Aliases V6.0...${NC}"
     sed -i "/# ZEROCHECKER ALIASES/,/alias z=/d" ~/.bashrc &> /dev/null
     {
-        echo "# ZEROCHECKER ALIASES V5.7.1"
+        echo "# ZEROCHECKER ALIASES V6.0"
         echo "alias zsync='$SCRIPT_PATH zsync'"
         echo "alias zconfig='$SCRIPT_PATH zconfig'"
-        echo "alias zhud='$SCRIPT_PATH zhud'"
-        echo "alias zm='$SCRIPT_PATH zm'"
+        echo "alias zdns='$SCRIPT_PATH zdns'"
         echo "alias zc='$SCRIPT_PATH zc'"
         echo "alias zd='$SCRIPT_PATH zd'"
-        echo "alias zs='$SCRIPT_PATH zs'"
         echo "alias zgh='$SCRIPT_PATH zgh'"
-        echo "alias zdocs='$SCRIPT_PATH zdocs'"
         echo "alias zsetup='$SCRIPT_PATH zsetup'"
         echo "alias z='$SCRIPT_PATH'"
     } >> ~/.bashrc
-    echo -e "${G}✅ SENTINEL SUPREME V5.7.1 CALIBRATED!${NC}"
-    echo -e "${Y}👉 JALANKAN INI SEKARANG: source ~/.bashrc${NC}"
+    echo -e "${G}✅ CORE V6.0 CALIBRATED!${NC}\n${Y}👉 RUN: source ~/.bashrc${NC}"
 }
 
-# --- ROUTING ---
 case "$1" in
-    zsync)  self_sync ;;
-    zgh)    github_checker ;;
-    zconfig) ghost_config ;;
+    zd)     ultimate_deploy ;;
+    zc)     ultimate_checker ;;
+    zdns)   dns_checker ;;
+    zsync)  # Inherited Self Sync
+            clear; show_ascii; echo -e "${Y}🚀 INITIATING EVOLUTION...${NC}"; git add .
+            MSG="evolve: zero sentinel v6.0 stabilization [$(date +'%H:%M')]"; git commit -m "$MSG" --quiet && git push origin main && echo -e "${G}✅ Cloud Synced.${NC}" || echo -e "${R}❌ Sync Failed.${NC}" ;;
+    zgh)    # Inherited Ghost Auth
+            clear; show_ascii; echo -e "${B}🐙 GHOST AUTH MATRIX${NC}"; echo -e "${BLUE}───${NC}"; echo -e " » User   : $(git config user.name)"; echo -e " » Remote : $(git remote -v | head -n 1 | awk '{print $2}')"; echo -e " » Branch : $(git branch --show-current)"; echo -e "${BLUE}───${NC}" ;;
     zsetup) setup_native_commands ;;
     *)      show_help ;;
 esac
